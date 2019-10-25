@@ -1,7 +1,7 @@
 typedef struct {
 	int sender;
 	int recipient;
-	char* message;
+	char* messageContent;
 } message_t;
 
 void message_create(message_t* m);

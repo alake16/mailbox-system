@@ -6,19 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/Users/aclake/luc/comp310/hw2/mailbox.c
+mailbox.h
+/Users/aclake/luc/comp310/hw2/mailbox.h
+stdlib.h
+-
+
 /Users/aclake/luc/comp310/hw2/mailbox.h
 message.h
 /Users/aclake/luc/comp310/hw2/message.h
-
-/Users/aclake/luc/comp310/hw2/main.c
-pthread.h
--
-stdio.h
--
-stdlib.h
--
-mailbox.h
-/Users/aclake/luc/comp310/hw2/mailbox.h
 
 /Users/aclake/luc/comp310/hw2/message.h
 
