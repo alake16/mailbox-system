@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/aclake/luc/comp310/hw2/mailbox.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/mailbox.c.o"
   "/Users/aclake/luc/comp310/hw2/main.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/main.c.o"
+  "/Users/aclake/luc/comp310/hw2/message.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/message.c.o"
   )
 set(CMAKE_C_COMPILER_ID "Clang")
 

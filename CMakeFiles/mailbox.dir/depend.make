@@ -3,7 +3,12 @@
 
 CMakeFiles/mailbox.dir/mailbox.c.o: mailbox.c
 CMakeFiles/mailbox.dir/mailbox.c.o: mailbox.h
+CMakeFiles/mailbox.dir/mailbox.c.o: message.h
 
 CMakeFiles/mailbox.dir/main.c.o: mailbox.h
 CMakeFiles/mailbox.dir/main.c.o: main.c
+CMakeFiles/mailbox.dir/main.c.o: message.h
+
+CMakeFiles/mailbox.dir/message.c.o: message.c
+CMakeFiles/mailbox.dir/message.c.o: message.h
 

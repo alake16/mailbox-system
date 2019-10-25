@@ -1,12 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "mailbox.h"
-#define NUM_THREADS	5
 
-void *PrintHello(void *threadid)
-{
-   long tid;
-   tid = (long)threadid;
-   printf("Hello World! It's me, thread #%ld!\n", tid);
-   pthread_exit(NULL);
+void mailbox_init(mailbox_t* mailboxes, int numAddresses) {
+
+}
+
+void mailbox_send(mailbox_t* mailboxes, message_t* message) {
+
+}
+
+message_t* message_receive(mailbox_t* mailboxes, int receiver) {
+
+}
+
+message_t* message_receive_poll(mailbox_t* mailboxes, int receiver) {
+
+}
+
+int message_available(mailbox_t* mailboxes, int receiver) {
+
 }

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/mailbox.dir/mailbox.c.o"
   "CMakeFiles/mailbox.dir/main.c.o"
+  "CMakeFiles/mailbox.dir/message.c.o"
   "mailbox"
   "mailbox.pdb"
 )

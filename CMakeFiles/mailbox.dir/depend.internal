@@ -4,6 +4,11 @@
 CMakeFiles/mailbox.dir/mailbox.c.o
  /Users/aclake/luc/comp310/hw2/mailbox.c
  /Users/aclake/luc/comp310/hw2/mailbox.h
+ /Users/aclake/luc/comp310/hw2/message.h
 CMakeFiles/mailbox.dir/main.c.o
  /Users/aclake/luc/comp310/hw2/mailbox.h
  /Users/aclake/luc/comp310/hw2/main.c
+ /Users/aclake/luc/comp310/hw2/message.h
+CMakeFiles/mailbox.dir/message.c.o
+ /Users/aclake/luc/comp310/hw2/message.c
+ /Users/aclake/luc/comp310/hw2/message.h
