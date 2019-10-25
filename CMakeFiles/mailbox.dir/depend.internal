@@ -3,3 +3,7 @@
 
 CMakeFiles/mailbox.dir/mailbox.c.o
  /Users/aclake/luc/comp310/hw2/mailbox.c
+ /Users/aclake/luc/comp310/hw2/mailbox.h
+CMakeFiles/mailbox.dir/main.c.o
+ /Users/aclake/luc/comp310/hw2/mailbox.h
+ /Users/aclake/luc/comp310/hw2/main.c

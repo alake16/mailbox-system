@@ -7,10 +7,12 @@
 #IncludeRegexTransform: 
 
 /Users/aclake/luc/comp310/hw2/mailbox.c
-pthread.h
--
 stdio.h
 -
 stdlib.h
 -
+mailbox.h
+/Users/aclake/luc/comp310/hw2/mailbox.h
+
+/Users/aclake/luc/comp310/hw2/mailbox.h
 
