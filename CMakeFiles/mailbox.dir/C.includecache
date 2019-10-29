@@ -6,13 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/aclake/luc/comp310/hw2/mailbox.c
-mailbox.h
-/Users/aclake/luc/comp310/hw2/mailbox.h
-stdlib.h
--
-
-/Users/aclake/luc/comp310/hw2/mailbox.h
+/Users/aclake/luc/comp310/hw2/message.c
 message.h
 /Users/aclake/luc/comp310/hw2/message.h
 
