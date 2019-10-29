@@ -4,7 +4,7 @@ This program utilizes multithreading ideologies to access shared structures acro
 ## Usage
 To run the program, run the following commands.
 ```bash
-cmake
+cmake .
 make
 ./mailbox
 ```
