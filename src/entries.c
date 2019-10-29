@@ -14,9 +14,16 @@ void insert_entry(entries_t* entries, message_t* message) {
 		message_t* oldMessages = entries -> messages;
 		entries -> messages = (message_t*)malloc((entries -> currentSize * 2) * sizeof(message_t));
 		entries -> messages = oldMessages;
+		clean_up_old_messages(oldMessages, entries -> numMessages - 1);
 	}
 	// messages array has enough spaces
 	else {
 		entries -> messages[entries -> numMessages - 1] = *message;
+	}
+}
+
+void clean_up_old_messages(message_t* messages, int numMessages) {
+	for (int message = 0; message < numMessages; message++) {
+		message_free(&messages[message]);
 	}
 }

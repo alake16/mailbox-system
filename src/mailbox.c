@@ -81,3 +81,7 @@ message_t* fetch_message(mailbox_t* mailboxes, int recipient) {
 	entry.numMessages -= 1;
 	return receivedMessage;
 }
+
+void mailbox_cleanup(mailbox_t* mailboxes) {
+	free(mailboxes -> entries);
+}

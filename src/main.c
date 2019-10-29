@@ -47,6 +47,7 @@ int main(int argc, char *argv[]) {
     argsReceive.recipient = 1;
     pthread_create(&threads[0], NULL, sendMessage, &argsSend);
     pthread_create(&threads[1], NULL, receiveMessage, &argsReceive);
+    mailbox_cleanup(&mailboxes);
     pthread_mutex_destroy(&entriesMutex);
     pthread_cond_destroy(&messageSent);
     pthread_exit(NULL);
