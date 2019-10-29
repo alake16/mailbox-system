@@ -3,7 +3,7 @@
 #include <pthread.h>
 #include "../include/mailbox.h"
 #define NUM_THREADS 2
-#define NUM_ADDRESSES 5
+#define NUM_ADDRESSES 2
 
 typedef struct {
     mailbox_t* mailboxes;
@@ -20,13 +20,6 @@ void *sendMessage(args *args) {
 void *receiveMessage(args *args) {
     message_t* message = message_receive(args -> mailboxes, args -> recipient);
     printf("Message Received: %s\n", message -> messageContent);
-    pthread_exit(NULL);
-}
-
-void *PrintHello(void *threadid) {
-    long tid;
-    tid = (long)threadid;
-    printf("Hello World! It's me, thread #%ld!\n", tid);
     pthread_exit(NULL);
 }
 
