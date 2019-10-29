@@ -2,6 +2,7 @@
 
 typedef struct {
 	int numAddresses;
+	message_t *messages;
 } mailbox_t;
 
 void mailbox_init(mailbox_t* mailboxes, int numAddresses);
