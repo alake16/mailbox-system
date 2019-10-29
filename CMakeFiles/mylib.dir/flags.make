@@ -6,5 +6,5 @@ C_FLAGS = -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/aclake/luc/comp310/hw2/include 
+C_INCLUDES = -I"/Users/aclake/luc/comp310/hw2/\$$~/luc/comp310/hw2" 
 

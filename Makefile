@@ -123,32 +123,113 @@ mailbox/fast:
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/build
 .PHONY : mailbox/fast
 
-main.o: main.c.o
+src/entries.o: src/entries.c.o
 
-.PHONY : main.o
+.PHONY : src/entries.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/main.c.o
-.PHONY : main.c.o
+src/entries.c.o:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.o
+.PHONY : src/entries.c.o
 
-main.i: main.c.i
+src/entries.i: src/entries.c.i
 
-.PHONY : main.i
+.PHONY : src/entries.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/main.c.i
-.PHONY : main.c.i
+src/entries.c.i:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.i
+.PHONY : src/entries.c.i
 
-main.s: main.c.s
+src/entries.s: src/entries.c.s
 
-.PHONY : main.s
+.PHONY : src/entries.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/main.c.s
-.PHONY : main.c.s
+src/entries.c.s:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.s
+.PHONY : src/entries.c.s
+
+src/mailbox.o: src/mailbox.c.o
+
+.PHONY : src/mailbox.o
+
+# target to build an object file
+src/mailbox.c.o:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.o
+.PHONY : src/mailbox.c.o
+
+src/mailbox.i: src/mailbox.c.i
+
+.PHONY : src/mailbox.i
+
+# target to preprocess a source file
+src/mailbox.c.i:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.i
+.PHONY : src/mailbox.c.i
+
+src/mailbox.s: src/mailbox.c.s
+
+.PHONY : src/mailbox.s
+
+# target to generate assembly for a file
+src/mailbox.c.s:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.s
+.PHONY : src/mailbox.c.s
+
+src/main.o: src/main.c.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/main.c.o
+.PHONY : src/main.c.o
+
+src/main.i: src/main.c.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/main.c.i
+.PHONY : src/main.c.i
+
+src/main.s: src/main.c.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/main.c.s
+.PHONY : src/main.c.s
+
+src/message.o: src/message.c.o
+
+.PHONY : src/message.o
+
+# target to build an object file
+src/message.c.o:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.o
+.PHONY : src/message.c.o
+
+src/message.i: src/message.c.i
+
+.PHONY : src/message.i
+
+# target to preprocess a source file
+src/message.c.i:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.i
+.PHONY : src/message.c.i
+
+src/message.s: src/message.c.s
+
+.PHONY : src/message.s
+
+# target to generate assembly for a file
+src/message.c.s:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.s
+.PHONY : src/message.c.s
 
 # Help Target
 help:
@@ -159,9 +240,18 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mailbox"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/entries.o"
+	@echo "... src/entries.i"
+	@echo "... src/entries.s"
+	@echo "... src/mailbox.o"
+	@echo "... src/mailbox.i"
+	@echo "... src/mailbox.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/message.o"
+	@echo "... src/message.i"
+	@echo "... src/message.s"
 .PHONY : help
 
 

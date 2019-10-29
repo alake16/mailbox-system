@@ -1,4 +1,3 @@
-#include "message.h"
 #include "entries.h"
 #include <stdbool.h>
 

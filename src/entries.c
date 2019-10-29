@@ -1,20 +1,19 @@
-#include "entry.h"
+#include "../include/entries.h"
 
 void entries_init(entries_t* entries) {
 	entries -> numMessages = 0;
 	entries -> currentSize = 2;
-	entries -> messages = (messages*)malloc(2 * sizeof(message_t));
+	entries -> messages = (message_t*)malloc(2 * sizeof(message_t));
 }
 
 void insert_entry(entries_t* entries, message_t* message) {
 	entries -> numMessages += 1;
 	if (entries -> numMessages > entries -> currentSize) {
-		messages* oldMessages = entries -> messages;
-		entries -> messages = (messages*)malloc((entries -> currentSize * 2) * sizeof(message_t));
+		message_t* oldMessages = entries -> messages;
+		entries -> messages = (message_t*)malloc((entries -> currentSize * 2) * sizeof(message_t));
 		entries -> messages = oldMessages;
-		entries 
 	}
 	else {
-		entries -> messages[numMessages] = message;
+		entries -> messages[entries -> numMessages] = *message;
 	}
 }

@@ -1,3 +1,5 @@
+#include "message.h"
+
 typedef struct {
 	int numMessages;
 	int currentSize;

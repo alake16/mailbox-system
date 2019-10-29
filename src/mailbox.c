@@ -1,5 +1,9 @@
-#include "mailbox.h"
-#include <stdlib.h>
+#include "../include/mailbox.h"
+#include <pthread.h>
+#include <stdio.h>
+
+pthread_mutex_t entriesMutex;
+pthread_cond_t sendMessage;
 
 void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 	mailboxes -> numAddresses = numAddresses;
@@ -9,9 +13,10 @@ void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 	if (is_valid_address(mailboxes -> numAddresses, message -> sender)) {
 		if (is_valid_address(mailboxes -> numAddresses, message -> recipient)) {
-			pthread_mutex_lock(&mutexMessages);
-		    insert_entry(mailboxes -> entries[mailboxes -> recipient], mailboxes -> numAddresses);
-		    pthread_mutex_unlock (&mutexMessages);
+			pthread_mutex_lock(&entriesMutex);
+			pthread_cond_signal(&sendMessage);
+		    insert_entry(&mailboxes -> entries[message -> recipient], message);
+		    pthread_mutex_unlock (&entriesMutex);
 		}
 		else {
 			printf("Recipient address out of range\n");

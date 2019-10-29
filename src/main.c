@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include "mailbox.h"
+#include "../include/mailbox.h"
 #define NUM_THREADS 5
+#define NUM_ADDRESSES 5
 
 void *PrintHello(void *threadid)
  {
@@ -16,6 +17,8 @@ int main(int argc, char *argv[]) {
   pthread_t threads[NUM_THREADS];
   int rc;
   long t;
+  mailbox_t mailboxes;
+  is_valid_address(3, 1);
   for(t = 0; t < NUM_THREADS; t++){
   	printf("In main: creating thread %ld\n", t);
   	rc = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
