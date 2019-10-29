@@ -5,7 +5,7 @@ void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 	mailboxes -> numAddresses = numAddresses;
 	mailboxes -> entries = (entries_t*)malloc(numAddresses * sizeof(entries_t)); 
 	for (int address = 0; address < numAddresses; address++) {
-		entries_init(&mailboxes -> entries[address]);
+		entries_init(&mailboxes -> entries[address], address);
 	}
 }
 
@@ -74,10 +74,10 @@ bool is_valid_address(int numAddresses, int address) {
 
 message_t* fetch_message(mailbox_t* mailboxes, int recipient) {
 	entries_t entry = mailboxes -> entries[recipient];
-	message_t* message = &entry.messages[0];
+	message_t* receivedMessage = &entry.messages[0];
 	for (int message = 1; message < entry.numMessages; message++) {
 		entry.messages[message - 1] = entry.messages[message];
 	}
 	entry.numMessages -= 1;
-	return message;
+	return receivedMessage;
 }

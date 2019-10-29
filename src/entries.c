@@ -1,6 +1,7 @@
 #include "../include/entries.h"
 
-void entries_init(entries_t* entries) {
+void entries_init(entries_t* entries, int address) {
+	entries -> address = address;
 	entries -> numMessages = 0;
 	entries -> currentSize = 2;
 	entries -> messages = (message_t*)malloc(2 * sizeof(message_t));
@@ -16,6 +17,6 @@ void insert_entry(entries_t* entries, message_t* message) {
 	}
 	// messages array has enough spaces
 	else {
-		entries -> messages[entries -> numMessages] = *message;
+		entries -> messages[entries -> numMessages - 1] = *message;
 	}
 }
