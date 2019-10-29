@@ -8,11 +8,13 @@ void entries_init(entries_t* entries) {
 
 void insert_entry(entries_t* entries, message_t* message) {
 	entries -> numMessages += 1;
+	// need to resize messages array
 	if (entries -> numMessages > entries -> currentSize) {
 		message_t* oldMessages = entries -> messages;
 		entries -> messages = (message_t*)malloc((entries -> currentSize * 2) * sizeof(message_t));
 		entries -> messages = oldMessages;
 	}
+	// messages array has enough spaces
 	else {
 		entries -> messages[entries -> numMessages] = *message;
 	}

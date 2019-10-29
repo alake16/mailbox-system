@@ -6,7 +6,6 @@ pthread_mutex_t entriesMutex;
 pthread_cond_t messageSent;
 
 typedef struct {
-	int id;
 	int numAddresses;
 	entries_t* entries;
 } mailbox_t;

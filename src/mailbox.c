@@ -4,6 +4,9 @@
 void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 	mailboxes -> numAddresses = numAddresses;
 	mailboxes -> entries = (entries_t*)malloc(numAddresses * sizeof(entries_t)); 
+	for (int address = 0; address < numAddresses; address++) {
+		entries_init(&mailboxes -> entries[address]);
+	}
 }
 
 void mailbox_send(mailbox_t* mailboxes, message_t* message) {
@@ -27,7 +30,7 @@ void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 }
 
 message_t* message_receive(mailbox_t* mailboxes, int recipient) {
-	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages -> recipient)) {
+	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages[0].recipient)) {
 		pthread_mutex_lock(&entriesMutex);
 		// wait for signal that a message has been sent
 		pthread_cond_wait(&messageSent, &entriesMutex);
@@ -42,7 +45,7 @@ message_t* message_receive(mailbox_t* mailboxes, int recipient) {
 }
 
 message_t* message_receive_poll(mailbox_t* mailboxes, int recipient) {
-	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages -> recipient)) {
+	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages[0].recipient)) {
 		pthread_mutex_lock(&entriesMutex);
 		pthread_cond_wait(&messageSent, &entriesMutex);
 		if (message_available(mailboxes, recipient)) {

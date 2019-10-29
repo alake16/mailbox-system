@@ -22,6 +22,12 @@ pthread.h
 stdlib.h
 -
 
+/Users/aclake/luc/comp310/hw2/src/mailbox.c
+../include/mailbox.h
+/Users/aclake/luc/comp310/hw2/include/mailbox.h
+stdio.h
+-
+
 /Users/aclake/luc/comp310/hw2/src/main.c
 stdio.h
 -
