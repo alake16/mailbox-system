@@ -5,4 +5,4 @@ typedef struct {
 } entries_t;
 
 void entries_init(entries_t* entries);
-void insert_entry(message_t* message);
+void insert_entry(entries_t* entries, message_t* message);

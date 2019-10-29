@@ -10,7 +10,7 @@ void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 	if (is_valid_address(mailboxes -> numAddresses, message -> sender)) {
 		if (is_valid_address(mailboxes -> numAddresses, message -> recipient)) {
 			pthread_mutex_lock(&mutexMessages);
-		    // mailboxes[message -> recipient][]
+		    insert_entry(mailboxes -> entries[mailboxes -> recipient], mailboxes -> numAddresses);
 		    pthread_mutex_unlock (&mutexMessages);
 		}
 		else {
