@@ -35,7 +35,7 @@ message_t* message_receive(mailbox_t* mailboxes, int recipient) {
 		pthread_mutex_lock(&entriesMutex);
 		pthread_cond_wait(&readMessage, &entriesMutex);
 		message_t* message = fetch_message(mailboxes, recipient);
-	    pthread_mutex_unlock (&entriesMutex);
+	    pthread_mutex_unlock(&entriesMutex);
 	}
 	else {
 		printf("Recipient address out of range\n");
@@ -43,13 +43,27 @@ message_t* message_receive(mailbox_t* mailboxes, int recipient) {
 	}
 }
 
-message_t* message_receive_poll(mailbox_t* mailboxes, int receiver) {
-	message_t message;
-	return &message;
+message_t* message_receive_poll(mailbox_t* mailboxes, int recipient) {
+	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages -> recipient)) {
+		pthread_mutex_lock(&entriesMutex);
+		pthread_cond_wait(&readMessage, &entriesMutex);
+		if (message_available(mailboxes, recipient)) {
+			message_t* message = fetch_message(mailboxes, recipient);
+			pthread_mutex_unlock(&entriesMutex);
+		}
+		else {
+			pthread_mutex_unlock(&entriesMutex);
+			return NULL;
+		}
+	}
+	else {
+		printf("Recipient address out of range\n");
+		exit(1);
+	}
 }
 
-int message_available(mailbox_t* mailboxes, int receiver) {
-	return 0;
+bool message_available(mailbox_t* mailboxes, int recipient) {
+	return mailboxes -> entries[recipient].numMessages > 0;
 }
 
 bool is_valid_address(int numAddresses, int address) {
