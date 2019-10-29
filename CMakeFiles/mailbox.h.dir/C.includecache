@@ -6,20 +6,28 @@
 
 #IncludeRegexTransform: 
 
+/Users/aclake/luc/comp310/hw2/entry.h
+
+/Users/aclake/luc/comp310/hw2/mailbox.c
+mailbox.h
+/Users/aclake/luc/comp310/hw2/mailbox.h
+stdlib.h
+-
+
 /Users/aclake/luc/comp310/hw2/mailbox.h
 message.h
 /Users/aclake/luc/comp310/hw2/message.h
-entries.h
-/Users/aclake/luc/comp310/hw2/entries.h
+entry.h
+/Users/aclake/luc/comp310/hw2/entry.h
 stdbool.h
+-
+pthread.h
 -
 
 /Users/aclake/luc/comp310/hw2/main.c
 stdio.h
 -
 stdlib.h
--
-pthread.h
 -
 mailbox.h
 /Users/aclake/luc/comp310/hw2/mailbox.h

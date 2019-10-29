@@ -123,33 +123,6 @@ mailbox/fast:
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/build
 .PHONY : mailbox/fast
 
-mailbox.o: mailbox.c.o
-
-.PHONY : mailbox.o
-
-# target to build an object file
-mailbox.c.o:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/mailbox.c.o
-.PHONY : mailbox.c.o
-
-mailbox.i: mailbox.c.i
-
-.PHONY : mailbox.i
-
-# target to preprocess a source file
-mailbox.c.i:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/mailbox.c.i
-.PHONY : mailbox.c.i
-
-mailbox.s: mailbox.c.s
-
-.PHONY : mailbox.s
-
-# target to generate assembly for a file
-mailbox.c.s:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/mailbox.c.s
-.PHONY : mailbox.c.s
-
 main.o: main.c.o
 
 .PHONY : main.o
@@ -177,33 +150,6 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/main.c.s
 .PHONY : main.c.s
 
-message.o: message.c.o
-
-.PHONY : message.o
-
-# target to build an object file
-message.c.o:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/message.c.o
-.PHONY : message.c.o
-
-message.i: message.c.i
-
-.PHONY : message.i
-
-# target to preprocess a source file
-message.c.i:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/message.c.i
-.PHONY : message.c.i
-
-message.s: message.c.s
-
-.PHONY : message.s
-
-# target to generate assembly for a file
-message.c.s:
-	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/message.c.s
-.PHONY : message.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,15 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... mailbox"
-	@echo "... mailbox.o"
-	@echo "... mailbox.i"
-	@echo "... mailbox.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... message.o"
-	@echo "... message.i"
-	@echo "... message.s"
 .PHONY : help
 
 

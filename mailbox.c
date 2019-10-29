@@ -3,12 +3,15 @@
 
 void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 	mailboxes -> numAddresses = numAddresses;
+	mailboxes -> entries = (entries_t*)malloc(numAddresses * sizeof(entries_t)); 
 }
 
 void mailbox_send(mailbox_t* mailboxes, message_t* message) {
-	if (isValidAddress(mailboxes -> numAddresses, message -> sender)) {
-		if (isValidAddress(mailboxes -> numAddresses, message -> recipient)) {
-			// critical region
+	if (is_valid_address(mailboxes -> numAddresses, message -> sender)) {
+		if (is_valid_address(mailboxes -> numAddresses, message -> recipient)) {
+			pthread_mutex_lock(&mutexMessages);
+		    // mailboxes[message -> recipient][]
+		    pthread_mutex_unlock (&mutexMessages);
 		}
 		else {
 			printf("Recipient address out of range\n");
@@ -35,6 +38,6 @@ int message_available(mailbox_t* mailboxes, int receiver) {
 	return 0;
 }
 
-bool isValidAddress(int numAddresses, int address) {
+bool is_valid_address(int numAddresses, int address) {
 	return address < numAddresses && address > 0;
 }
