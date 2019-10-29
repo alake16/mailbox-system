@@ -2,31 +2,51 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include "../include/mailbox.h"
-#define NUM_THREADS 5
+#define NUM_THREADS 2
 #define NUM_ADDRESSES 5
 
-void *PrintHello(void *threadid)
- {
+typedef struct {
+    mailbox_t* mailboxes;
+    message_t* message;
+    int recipient;
+} args;
+
+void *sendMessage(args *args) {
+    mailbox_send(args -> mailboxes, args -> message);
+    printf("Message Sent: %s\n", args -> message -> messageContent);
+    pthread_exit(NULL);
+}
+
+void *receiveMessage(args *args) {
+    message_t* message = message_receive(args -> mailboxes, args -> recipient);
+    printf("Message Received: %s\n", message -> messageContent);
+    pthread_exit(NULL);
+}
+
+void *PrintHello(void *threadid) {
     long tid;
     tid = (long)threadid;
     printf("Hello World! It's me, thread #%ld!\n", tid);
     pthread_exit(NULL);
- }
+}
 
 int main(int argc, char *argv[]) {
-  pthread_t threads[NUM_THREADS];
-  int rc;
-  long t;
-  mailbox_t mailboxes;
-  is_valid_address(3, 1);
-  for(t = 0; t < NUM_THREADS; t++){
-  	printf("In main: creating thread %ld\n", t);
-  	rc = pthread_create(&threads[t], NULL, PrintHello, (void *)t);
-  	if (rc) {
-  		printf("ERROR; return code from pthread_create() is %d\n", rc);
-  		exit(-1);
-  	}
-  }
-  pthread_exit(NULL);
-  return 0;
+    mailbox_t mailboxes;
+    mailbox_init(&mailboxes, NUM_ADDRESSES);
+    /* Initialize threads, mutex, and condition variable objects */
+    pthread_t threads[NUM_THREADS];
+    pthread_mutex_init(&entriesMutex, NULL);
+    pthread_cond_init (&messageSent, NULL);
+    message_t message;
+    message_init(&message, 0, 1, "Hello");
+    args argsSend;
+    argsSend.mailboxes = &mailboxes;
+    argsSend.message = &message;
+    args argsReceive;
+    argsReceive.mailboxes = &mailboxes;
+    argsReceive.recipient = 1;
+    pthread_create(&threads[0], NULL, sendMessage, &argsSend);
+    pthread_create(&threads[1], NULL, receiveMessage, &argsReceive);
+    pthread_exit(NULL);
+    return 0;
 }

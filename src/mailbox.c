@@ -1,10 +1,5 @@
 #include "../include/mailbox.h"
-#include <pthread.h>
 #include <stdio.h>
-
-pthread_mutex_t entriesMutex;
-pthread_cond_t sendMessage;
-pthread_cond_t readMessage;
 
 void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 	mailboxes -> numAddresses = numAddresses;
@@ -15,8 +10,9 @@ void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 	if (is_valid_address(mailboxes -> numAddresses, message -> sender)) {
 		if (is_valid_address(mailboxes -> numAddresses, message -> recipient)) {
 			pthread_mutex_lock(&entriesMutex);
-			pthread_cond_signal(&sendMessage);
-		    insert_entry(&mailboxes -> entries[message -> recipient], message);
+			insert_entry(&mailboxes -> entries[message -> recipient], message);
+			// signal that a message has been sent
+			pthread_cond_signal(&messageSent);
 		    pthread_mutex_unlock (&entriesMutex);
 		}
 		else {
@@ -33,9 +29,11 @@ void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 message_t* message_receive(mailbox_t* mailboxes, int recipient) {
 	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages -> recipient)) {
 		pthread_mutex_lock(&entriesMutex);
-		pthread_cond_wait(&readMessage, &entriesMutex);
+		// wait for signal that a message has been sent
+		pthread_cond_wait(&messageSent, &entriesMutex);
 		message_t* message = fetch_message(mailboxes, recipient);
 	    pthread_mutex_unlock(&entriesMutex);
+	    return message;
 	}
 	else {
 		printf("Recipient address out of range\n");
@@ -46,10 +44,11 @@ message_t* message_receive(mailbox_t* mailboxes, int recipient) {
 message_t* message_receive_poll(mailbox_t* mailboxes, int recipient) {
 	if (is_valid_address(mailboxes -> numAddresses, mailboxes -> entries[recipient].messages -> recipient)) {
 		pthread_mutex_lock(&entriesMutex);
-		pthread_cond_wait(&readMessage, &entriesMutex);
+		pthread_cond_wait(&messageSent, &entriesMutex);
 		if (message_available(mailboxes, recipient)) {
 			message_t* message = fetch_message(mailboxes, recipient);
 			pthread_mutex_unlock(&entriesMutex);
+			return message;
 		}
 		else {
 			pthread_mutex_unlock(&entriesMutex);
@@ -67,7 +66,7 @@ bool message_available(mailbox_t* mailboxes, int recipient) {
 }
 
 bool is_valid_address(int numAddresses, int address) {
-	return address < numAddresses && address > 0;
+	return address < numAddresses && address >= 0;
 }
 
 message_t* fetch_message(mailbox_t* mailboxes, int recipient) {

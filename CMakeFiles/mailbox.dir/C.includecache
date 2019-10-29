@@ -15,16 +15,20 @@ entries.h
 /Users/aclake/luc/comp310/hw2/include/entries.h
 stdbool.h
 -
+pthread.h
+-
 
 /Users/aclake/luc/comp310/hw2/include/message.h
 stdlib.h
 -
 
-/Users/aclake/luc/comp310/hw2/src/mailbox.c
-../include/mailbox.h
-/Users/aclake/luc/comp310/hw2/include/mailbox.h
-pthread.h
--
+/Users/aclake/luc/comp310/hw2/src/main.c
 stdio.h
 -
+stdlib.h
+-
+pthread.h
+-
+../include/mailbox.h
+/Users/aclake/luc/comp310/hw2/include/mailbox.h
 

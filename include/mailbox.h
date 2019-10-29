@@ -1,5 +1,9 @@
 #include "entries.h"
 #include <stdbool.h>
+#include <pthread.h>
+
+pthread_mutex_t entriesMutex;
+pthread_cond_t messageSent;
 
 typedef struct {
 	int id;

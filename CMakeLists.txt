@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.6)
 project (mailbox)
 set (CMAKE_C_FLAGS "-isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk")
+set(CMAKE_BUILD_TYPE Debug)
 include_directories(include)
 add_executable(mailbox src/main.c src/mailbox.c src/message.c src/entries.c)
