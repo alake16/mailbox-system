@@ -7,5 +7,4 @@ typedef struct {
 } message_t;
 
 void message_init(message_t* m, int sender, int receiver, char* messageContent);
-
 void message_free(message_t* m);

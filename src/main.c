@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <pthread.h>
 #include "../include/mailbox.h"
 #define NUM_THREADS 2
@@ -11,13 +10,15 @@ typedef struct {
     int recipient;
 } args;
 
-void *sendMessage(args *args) {
+void *sendMessage(void *voidData) {
+    args *args = voidData;
     mailbox_send(args -> mailboxes, args -> message);
     printf("Message Sent: %s\n", (args -> message) -> messageContent);
     pthread_exit(NULL);
 }
 
-void *receiveMessage(args *args) {
+void *receiveMessage(void *voidData) {
+    args *args = voidData;
     message_t* message = message_receive(args -> mailboxes, args -> recipient);
     printf("Message Received: %s\n", message -> messageContent);
     pthread_exit(NULL);
@@ -26,10 +27,7 @@ void *receiveMessage(args *args) {
 int main(int argc, char *argv[]) {
     mailbox_t mailboxes;
     mailbox_init(&mailboxes, NUM_ADDRESSES);
-    /* Initialize threads, mutex, and condition variable objects */
     pthread_t threads[NUM_THREADS];
-    pthread_mutex_init(&entriesMutex, NULL);
-    pthread_cond_init (&messageSent, NULL);
     message_t message;
     message_init(&message, 0, 1, "Hello");
     args argsSend;
@@ -41,8 +39,6 @@ int main(int argc, char *argv[]) {
     pthread_create(&threads[0], NULL, sendMessage, &argsSend);
     pthread_create(&threads[1], NULL, receiveMessage, &argsReceive);
     mailbox_cleanup(&mailboxes);
-    pthread_mutex_destroy(&entriesMutex);
-    pthread_cond_destroy(&messageSent);
     pthread_exit(NULL);
     return 0;
 }
