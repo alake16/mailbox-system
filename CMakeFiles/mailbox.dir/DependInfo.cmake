@@ -8,8 +8,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/aclake/luc/comp310/hw2/src/mailbox.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/src/mailbox.c.o"
   "/Users/aclake/luc/comp310/hw2/src/main.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/src/main.c.o"
   "/Users/aclake/luc/comp310/hw2/src/message.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/src/message.c.o"
+  "/Users/aclake/luc/comp310/hw2/src/test.c" "/Users/aclake/luc/comp310/hw2/CMakeFiles/mailbox.dir/src/test.c.o"
   )
-set(CMAKE_C_COMPILER_ID "Clang")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

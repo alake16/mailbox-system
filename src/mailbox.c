@@ -1,5 +1,4 @@
 #include "../include/mailbox.h"
-#include <pthread.h>
 #include <stdio.h>
 
 void mailbox_init(mailbox_t *mailboxes, int numAddresses) {

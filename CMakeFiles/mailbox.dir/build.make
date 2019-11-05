@@ -70,9 +70,22 @@ CMakeFiles/mailbox.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mailbox.dir/src/main.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aclake/luc/comp310/hw2/src/main.c -o CMakeFiles/mailbox.dir/src/main.c.s
 
+CMakeFiles/mailbox.dir/src/test.c.o: CMakeFiles/mailbox.dir/flags.make
+CMakeFiles/mailbox.dir/src/test.c.o: src/test.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mailbox.dir/src/test.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mailbox.dir/src/test.c.o   -c /Users/aclake/luc/comp310/hw2/src/test.c
+
+CMakeFiles/mailbox.dir/src/test.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/mailbox.dir/src/test.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/aclake/luc/comp310/hw2/src/test.c > CMakeFiles/mailbox.dir/src/test.c.i
+
+CMakeFiles/mailbox.dir/src/test.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/mailbox.dir/src/test.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/aclake/luc/comp310/hw2/src/test.c -o CMakeFiles/mailbox.dir/src/test.c.s
+
 CMakeFiles/mailbox.dir/src/mailbox.c.o: CMakeFiles/mailbox.dir/flags.make
 CMakeFiles/mailbox.dir/src/mailbox.c.o: src/mailbox.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/mailbox.dir/src/mailbox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mailbox.dir/src/mailbox.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mailbox.dir/src/mailbox.c.o   -c /Users/aclake/luc/comp310/hw2/src/mailbox.c
 
 CMakeFiles/mailbox.dir/src/mailbox.c.i: cmake_force
@@ -85,7 +98,7 @@ CMakeFiles/mailbox.dir/src/mailbox.c.s: cmake_force
 
 CMakeFiles/mailbox.dir/src/entries.c.o: CMakeFiles/mailbox.dir/flags.make
 CMakeFiles/mailbox.dir/src/entries.c.o: src/entries.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/mailbox.dir/src/entries.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mailbox.dir/src/entries.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mailbox.dir/src/entries.c.o   -c /Users/aclake/luc/comp310/hw2/src/entries.c
 
 CMakeFiles/mailbox.dir/src/entries.c.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/mailbox.dir/src/entries.c.s: cmake_force
 
 CMakeFiles/mailbox.dir/src/message.c.o: CMakeFiles/mailbox.dir/flags.make
 CMakeFiles/mailbox.dir/src/message.c.o: src/message.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/mailbox.dir/src/message.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/mailbox.dir/src/message.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/mailbox.dir/src/message.c.o   -c /Users/aclake/luc/comp310/hw2/src/message.c
 
 CMakeFiles/mailbox.dir/src/message.c.i: cmake_force
@@ -112,6 +125,7 @@ CMakeFiles/mailbox.dir/src/message.c.s: cmake_force
 # Object files for target mailbox
 mailbox_OBJECTS = \
 "CMakeFiles/mailbox.dir/src/main.c.o" \
+"CMakeFiles/mailbox.dir/src/test.c.o" \
 "CMakeFiles/mailbox.dir/src/mailbox.c.o" \
 "CMakeFiles/mailbox.dir/src/entries.c.o" \
 "CMakeFiles/mailbox.dir/src/message.c.o"
@@ -120,12 +134,13 @@ mailbox_OBJECTS = \
 mailbox_EXTERNAL_OBJECTS =
 
 mailbox: CMakeFiles/mailbox.dir/src/main.c.o
+mailbox: CMakeFiles/mailbox.dir/src/test.c.o
 mailbox: CMakeFiles/mailbox.dir/src/mailbox.c.o
 mailbox: CMakeFiles/mailbox.dir/src/entries.c.o
 mailbox: CMakeFiles/mailbox.dir/src/message.c.o
 mailbox: CMakeFiles/mailbox.dir/build.make
 mailbox: CMakeFiles/mailbox.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking C executable mailbox"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable mailbox"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mailbox.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

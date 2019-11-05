@@ -14,7 +14,14 @@ CMakeFiles/mailbox.dir/src/main.c.o
  /Users/aclake/luc/comp310/hw2/include/entries.h
  /Users/aclake/luc/comp310/hw2/include/mailbox.h
  /Users/aclake/luc/comp310/hw2/include/message.h
+ /Users/aclake/luc/comp310/hw2/include/test.h
  /Users/aclake/luc/comp310/hw2/src/main.c
 CMakeFiles/mailbox.dir/src/message.c.o
  /Users/aclake/luc/comp310/hw2/include/message.h
  /Users/aclake/luc/comp310/hw2/src/message.c
+CMakeFiles/mailbox.dir/src/test.c.o
+ /Users/aclake/luc/comp310/hw2/src/test.c
+ include/entries.h
+ include/mailbox.h
+ include/message.h
+ include/test.h

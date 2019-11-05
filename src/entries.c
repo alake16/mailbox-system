@@ -1,4 +1,3 @@
-#include <pthread.h>
 #include "../include/entries.h"
 
 void entries_init(entries_t* entries) {

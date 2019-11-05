@@ -231,6 +231,33 @@ src/message.c.s:
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.s
 .PHONY : src/message.c.s
 
+src/test.o: src/test.c.o
+
+.PHONY : src/test.o
+
+# target to build an object file
+src/test.c.o:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/test.c.o
+.PHONY : src/test.c.o
+
+src/test.i: src/test.c.i
+
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.c.i:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/test.c.i
+.PHONY : src/test.c.i
+
+src/test.s: src/test.c.s
+
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.c.s:
+	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/test.c.s
+.PHONY : src/test.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -252,6 +279,9 @@ help:
 	@echo "... src/message.o"
 	@echo "... src/message.i"
 	@echo "... src/message.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 
