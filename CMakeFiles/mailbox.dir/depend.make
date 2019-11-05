@@ -19,9 +19,9 @@ CMakeFiles/mailbox.dir/src/main.c.o: src/main.c
 CMakeFiles/mailbox.dir/src/message.c.o: include/message.h
 CMakeFiles/mailbox.dir/src/message.c.o: src/message.c
 
-CMakeFiles/mailbox.dir/src/test.c.o: src/test.c
 CMakeFiles/mailbox.dir/src/test.c.o: include/entries.h
 CMakeFiles/mailbox.dir/src/test.c.o: include/mailbox.h
 CMakeFiles/mailbox.dir/src/test.c.o: include/message.h
 CMakeFiles/mailbox.dir/src/test.c.o: include/test.h
+CMakeFiles/mailbox.dir/src/test.c.o: src/test.c
 

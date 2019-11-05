@@ -26,9 +26,9 @@ stdlib.h
 mailbox.h
 /Users/aclake/luc/comp310/hw2/include/mailbox.h
 
-/Users/aclake/luc/comp310/hw2/src/main.c
-stdio.h
--
+/Users/aclake/luc/comp310/hw2/src/test.c
 ../include/test.h
 /Users/aclake/luc/comp310/hw2/include/test.h
+stdio.h
+-
 

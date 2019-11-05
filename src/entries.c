@@ -11,16 +11,13 @@ void entries_init(entries_t* entries) {
 }
 
 void entry_send(entries_t* entries, message_t* message) {
-	ptrhead_mutex_lock(&entries -> lock);
+	pthread_mutex_lock(&entries -> lock);
 	if (entries -> numMessages == entries -> capacity) {
 		pthread_cond_wait(&entries -> notFull, &entries -> lock);
 	}
 	insert_entry(entries, message);
-	// check if message array is full
-		// if it is, pthread_cond_wait(&entries -> lock, &entries -> notFull)
-	// add the message to the messages array
 	pthread_cond_signal(&entries -> empty);
-	ptrhead_mutex_unlock(&entries -> lock);
+	pthread_mutex_unlock(&entries -> lock);
 }
 
 void insert_entry(entries_t* entries, message_t* message) {
@@ -29,18 +26,13 @@ void insert_entry(entries_t* entries, message_t* message) {
 }
 
 message_t* entry_receive(entries_t* entries) {
-	ptrhead_mutex_lock(&entries -> lock);
+	pthread_mutex_lock(&entries -> lock);
 	if (entries -> numMessages == 0) {
 		pthread_cond_wait(&entries -> empty, &entries -> lock);
 	}
-
-	// check if message array is empty
-		// if it is, pthread_cond_wait(&entries -> lock, &entries -> empty)
-	// remove the message to the messages array and save it
 	message_t* received = fetch_message(entries);
 	pthread_cond_signal(&entries -> notFull);
-	ptrhead_mutex_unlock(&entries -> lock);
-	// return the message
+	pthread_mutex_unlock(&entries -> lock);
 	return received;
 }
 

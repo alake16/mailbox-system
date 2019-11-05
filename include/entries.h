@@ -9,13 +9,6 @@ typedef struct {
 	pthread_cond_t notFull, empty;
 } entries_t;
 
-// typedef struct {
-// 	int address;
-// 	int numMessages;
-// 	int currentSize;
-// 	message_t* messages;
-// } entries_t;
-
 void entries_init(entries_t* entries);
 void entry_send(entries_t* entries, message_t* message);
 void insert_entry(entries_t* entries, message_t* message);

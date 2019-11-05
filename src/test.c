@@ -1,4 +1,5 @@
-#include "test.h"
+#include "../include/test.h"
+#include <stdio.h>
 
 void *sendMessage(void *voidData) {
     args *args = voidData;
