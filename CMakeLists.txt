@@ -7,3 +7,6 @@ find_package(Threads REQUIRED)
 include_directories(include)
 add_executable(mailbox src/main.c src/test.c src/mailbox.c src/entries.c src/message.c)
 target_link_libraries(mailbox pthread)
+
+add_executable(try_mailbox src/try_mailbox.c src/mailbox.c src/entries.c src/message.c)
+target_link_libraries(mailbox pthread)

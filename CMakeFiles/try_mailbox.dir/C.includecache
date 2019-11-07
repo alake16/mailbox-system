@@ -22,10 +22,6 @@ entries.h
 stdlib.h
 -
 
-/Users/aclake/luc/comp310/hw2/include/test.h
-mailbox.h
-/Users/aclake/luc/comp310/hw2/include/mailbox.h
-
 /Users/aclake/luc/comp310/hw2/src/entries.c
 ../include/entries.h
 /Users/aclake/luc/comp310/hw2/include/entries.h
@@ -38,19 +34,35 @@ stdio.h
 stdio.h
 -
 
-/Users/aclake/luc/comp310/hw2/src/main.c
-stdio.h
--
-../include/test.h
-/Users/aclake/luc/comp310/hw2/include/test.h
-
 /Users/aclake/luc/comp310/hw2/src/message.c
 ../include/message.h
 /Users/aclake/luc/comp310/hw2/include/message.h
 
-/Users/aclake/luc/comp310/hw2/src/test.c
-../include/test.h
-/Users/aclake/luc/comp310/hw2/include/test.h
+/Users/aclake/luc/comp310/hw2/src/try_mailbox.c
+pthread.h
+-
 stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+mailbox.h
+/Users/aclake/luc/comp310/hw2/src/mailbox.h
+
+include/entries.h
+pthread.h
+-
+message.h
+include/message.h
+
+include/mailbox.h
+stdbool.h
+-
+entries.h
+include/entries.h
+
+include/message.h
+stdlib.h
 -
 

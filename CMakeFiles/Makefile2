@@ -53,11 +53,13 @@ CMAKE_BINARY_DIR = /Users/aclake/luc/comp310/hw2
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/try_mailbox.dir/all
 all: CMakeFiles/mailbox.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
+clean: CMakeFiles/try_mailbox.dir/clean
 clean: CMakeFiles/mailbox.dir/clean
 
 .PHONY : clean
@@ -66,6 +68,33 @@ clean: CMakeFiles/mailbox.dir/clean
 preinstall:
 
 .PHONY : preinstall
+
+#=============================================================================
+# Target rules for target CMakeFiles/try_mailbox.dir
+
+# All Build rule for target.
+CMakeFiles/try_mailbox.dir/all:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/depend
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/aclake/luc/comp310/hw2/CMakeFiles --progress-num=7,8,9,10,11 "Built target try_mailbox"
+.PHONY : CMakeFiles/try_mailbox.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/try_mailbox.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aclake/luc/comp310/hw2/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/try_mailbox.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/aclake/luc/comp310/hw2/CMakeFiles 0
+.PHONY : CMakeFiles/try_mailbox.dir/rule
+
+# Convenience name for target.
+try_mailbox: CMakeFiles/try_mailbox.dir/rule
+
+.PHONY : try_mailbox
+
+# clean rule for target.
+CMakeFiles/try_mailbox.dir/clean:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/clean
+.PHONY : CMakeFiles/try_mailbox.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/mailbox.dir

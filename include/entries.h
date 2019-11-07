@@ -1,3 +1,6 @@
+#ifndef _ENTRIES_H_
+#define _ENTRIES_H_
+
 #include <pthread.h>
 #include "message.h"
 
@@ -14,3 +17,5 @@ void entry_send(entries_t* entries, message_t* message);
 void insert_entry(entries_t* entries, message_t* message);
 message_t* entry_receive(entries_t* entries);
 message_t* fetch_message(entries_t* entries);
+
+#endif

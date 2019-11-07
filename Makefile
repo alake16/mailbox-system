@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named try_mailbox
+
+# Build rule for target.
+try_mailbox: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 try_mailbox
+.PHONY : try_mailbox
+
+# fast build rule for target.
+try_mailbox/fast:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/build
+.PHONY : try_mailbox/fast
+
+#=============================================================================
 # Target rules for targets named mailbox
 
 # Build rule for target.
@@ -129,6 +142,7 @@ src/entries.o: src/entries.c.o
 
 # target to build an object file
 src/entries.c.o:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/entries.c.o
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.o
 .PHONY : src/entries.c.o
 
@@ -138,6 +152,7 @@ src/entries.i: src/entries.c.i
 
 # target to preprocess a source file
 src/entries.c.i:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/entries.c.i
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.i
 .PHONY : src/entries.c.i
 
@@ -147,6 +162,7 @@ src/entries.s: src/entries.c.s
 
 # target to generate assembly for a file
 src/entries.c.s:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/entries.c.s
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/entries.c.s
 .PHONY : src/entries.c.s
 
@@ -156,6 +172,7 @@ src/mailbox.o: src/mailbox.c.o
 
 # target to build an object file
 src/mailbox.c.o:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/mailbox.c.o
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.o
 .PHONY : src/mailbox.c.o
 
@@ -165,6 +182,7 @@ src/mailbox.i: src/mailbox.c.i
 
 # target to preprocess a source file
 src/mailbox.c.i:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/mailbox.c.i
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.i
 .PHONY : src/mailbox.c.i
 
@@ -174,6 +192,7 @@ src/mailbox.s: src/mailbox.c.s
 
 # target to generate assembly for a file
 src/mailbox.c.s:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/mailbox.c.s
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/mailbox.c.s
 .PHONY : src/mailbox.c.s
 
@@ -210,6 +229,7 @@ src/message.o: src/message.c.o
 
 # target to build an object file
 src/message.c.o:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/message.c.o
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.o
 .PHONY : src/message.c.o
 
@@ -219,6 +239,7 @@ src/message.i: src/message.c.i
 
 # target to preprocess a source file
 src/message.c.i:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/message.c.i
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.i
 .PHONY : src/message.c.i
 
@@ -228,6 +249,7 @@ src/message.s: src/message.c.s
 
 # target to generate assembly for a file
 src/message.c.s:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/message.c.s
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/message.c.s
 .PHONY : src/message.c.s
 
@@ -258,6 +280,33 @@ src/test.c.s:
 	$(MAKE) -f CMakeFiles/mailbox.dir/build.make CMakeFiles/mailbox.dir/src/test.c.s
 .PHONY : src/test.c.s
 
+src/try_mailbox.o: src/try_mailbox.c.o
+
+.PHONY : src/try_mailbox.o
+
+# target to build an object file
+src/try_mailbox.c.o:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/try_mailbox.c.o
+.PHONY : src/try_mailbox.c.o
+
+src/try_mailbox.i: src/try_mailbox.c.i
+
+.PHONY : src/try_mailbox.i
+
+# target to preprocess a source file
+src/try_mailbox.c.i:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/try_mailbox.c.i
+.PHONY : src/try_mailbox.c.i
+
+src/try_mailbox.s: src/try_mailbox.c.s
+
+.PHONY : src/try_mailbox.s
+
+# target to generate assembly for a file
+src/try_mailbox.c.s:
+	$(MAKE) -f CMakeFiles/try_mailbox.dir/build.make CMakeFiles/try_mailbox.dir/src/try_mailbox.c.s
+.PHONY : src/try_mailbox.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -266,6 +315,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... try_mailbox"
 	@echo "... mailbox"
 	@echo "... src/entries.o"
 	@echo "... src/entries.i"
@@ -282,6 +332,9 @@ help:
 	@echo "... src/test.o"
 	@echo "... src/test.i"
 	@echo "... src/test.s"
+	@echo "... src/try_mailbox.o"
+	@echo "... src/try_mailbox.i"
+	@echo "... src/try_mailbox.s"
 .PHONY : help
 
 

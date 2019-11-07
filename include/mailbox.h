@@ -1,3 +1,6 @@
+#ifndef _MAILBOX_H_
+#define _MAILBOX_H_
+
 #include <stdbool.h>
 #include "entries.h"
 
@@ -13,3 +16,5 @@ message_t* message_receive_poll(mailbox_t* mailboxes, int recipient);
 bool message_available(mailbox_t* mailboxes, int recipient);
 bool is_valid_address(int numAddresses, int address);
 void mailbox_cleanup(mailbox_t* mailboxes);
+
+#endif

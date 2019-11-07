@@ -1,3 +1,6 @@
+#ifndef _TEST_H_
+#define _TEST_H_
+
 #include "mailbox.h"
 
 typedef struct {
@@ -13,3 +16,5 @@ void *sendMessage(void *voidData);
 void *receiveMessage(void *voidData);
 void testSendThenReceive();
 void testReceiveThenSend();
+
+#endif
