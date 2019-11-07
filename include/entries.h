@@ -12,10 +12,10 @@ typedef struct {
 	pthread_cond_t notFull, empty;
 } entries_t;
 
-void entries_init(entries_t* entries);
-void entry_send(entries_t* entries, message_t* message);
-void insert_entry(entries_t* entries, message_t* message);
-message_t* entry_receive(entries_t* entries);
-message_t* fetch_message(entries_t* entries);
+extern void entries_init(entries_t* entries);
+extern void entry_send(entries_t* entries, message_t* message);
+extern void insert_entry(entries_t* entries, message_t* message);
+extern message_t* entry_receive(entries_t* entries);
+extern message_t* fetch_message(entries_t* entries);
 
 #endif

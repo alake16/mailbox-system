@@ -9,12 +9,12 @@ typedef struct {
 	entries_t* entries;
 } mailbox_t;
 
-void mailbox_init(mailbox_t* mailboxes, int numAddresses);
-void mailbox_send(mailbox_t* mailboxes, message_t* message);
-message_t* message_receive(mailbox_t* mailboxes, int recipient);
-message_t* message_receive_poll(mailbox_t* mailboxes, int recipient);
-bool message_available(mailbox_t* mailboxes, int recipient);
-bool is_valid_address(int numAddresses, int address);
-void mailbox_cleanup(mailbox_t* mailboxes);
+extern void mailbox_init(mailbox_t* mailboxes, int numAddresses);
+extern void mailbox_send(mailbox_t* mailboxes, message_t* message);
+extern message_t* message_receive(mailbox_t* mailboxes, int recipient);
+extern message_t* message_receive_poll(mailbox_t* mailboxes, int recipient);
+extern bool message_available(mailbox_t* mailboxes, int recipient);
+extern bool is_valid_address(int numAddresses, int address);
+extern void mailbox_cleanup(mailbox_t* mailboxes);
 
 #endif

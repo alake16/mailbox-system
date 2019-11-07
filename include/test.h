@@ -12,9 +12,9 @@ typedef struct {
 #define NUM_THREADS 2
 #define NUM_ADDRESSES 2
 
-void *sendMessage(void *voidData);
-void *receiveMessage(void *voidData);
-void testSendThenReceive();
-void testReceiveThenSend();
+extern void *sendMessage(void *voidData);
+extern void *receiveMessage(void *voidData);
+extern void testSendThenReceive();
+extern void testReceiveThenSend();
 
 #endif

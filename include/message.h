@@ -9,7 +9,7 @@ typedef struct {
 	char* messageContent;
 } message_t;
 
-void message_init(message_t* m, int sender, int receiver, char* messageContent);
-void message_free(message_t* m);
+extern void message_init(message_t* m, int sender, int receiver, char* messageContent);
+extern void message_free(message_t* m);
 
 #endif
