@@ -12,7 +12,7 @@ void mailbox_init(mailbox_t *mailboxes, int numAddresses) {
 void mailbox_send(mailbox_t* mailboxes, message_t* message) {
 	if (is_valid_address(mailboxes -> numAddresses, message -> sender)) {
 		if (is_valid_address(mailboxes -> numAddresses, message -> recipient)) {
-			entry_receive(&mailboxes -> entries[message -> recipient]);
+			entry_send(&mailboxes -> entries[message -> recipient], message);
 		}
 		else {
 			printf("Recipient address out of range\n");
